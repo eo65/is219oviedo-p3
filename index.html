@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="IS219Gallery">
 <head>
 	<title>IS219 Gallery (Project 3)</title>
 
@@ -16,16 +16,16 @@
 	<!-- DO NOT CHANGE ANYTHING ABOVE THIS LINE-->
 
 	<!-- Angular (ADD HERE) -->
-
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 	
 </head>
 
-  <body>
+  <body ng-controller="HomeController">
 	  
     <div class="header">
 	    
       <div class="container">
-        <h1 id="app_title">%title%</h1>
+        <h1 id="app_title">{{title}}</h1>
       </div>
       
     </div>
@@ -37,18 +37,18 @@
         <div class="col-md-6"> 
             <div class="thumbnail">
 
-					<img class="poster" />
-					<div class="imageInfo">%posterindex%</div>
+					<img class="poster" />{{movies[0].posters[0]}}
+					<div class="imageInfo">{{movies[0].posterIndex}}</div>
 					
-					<p class="title">%title% (%country%)</p> 
-					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> %iscore% </p>
-					<p class="runtime">Runtime: %runtime%</p> 
-					<p class="released">Released: %released% | Rated: %rating%</p>
-					<p class="websites">Websites: <a>%imdb%</a> | <a>%website%</a></p>
+					<p class="title">{{movies[0].title}} ({{movies[0].country}})</p> 
+					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[0].iscore}} </p>
+					<p class="runtime">Runtime: {{movies[0].runtime}}</p> 
+					<p class="released">Released: {{movies[0].released}} | Rated: {{movies[0].rating}}</p>
+					<p class="websites">Websites: <a>{{movies[0].imdb}}</a> | <a>{{movies[0].website}}</a></p>
 					
 		            <div class="social">
-		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> %like%</p>
-		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> %dislike%</p>
+		              <p class="likes"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[0].likes}}</p>
+		              <p class="dislikes"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[0].dislikes}}</p>
 		            </div>
             </div> 
         </div>
@@ -58,8 +58,8 @@
 
     <div class="footer">
       <div class="container">
-		<a id="github" class="btn btn-lg btn-warning">
-			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> %owner% %github%
+		<a id="github" class="btn btn-lg btn-warning" ng-controller="HomeController">
+			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> {{owner}} {{github}}
   		</a>
       </div>
     </div>

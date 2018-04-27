@@ -1,3 +1,4 @@
+
 app.controller('HomeController', ['$scope', function($scope) {
 	
 	
@@ -18,8 +19,13 @@ app.controller('HomeController', ['$scope', function($scope) {
 	//
 	// FOR STEP 16, ADD THREE OF YOUR OWN FAVORITE MOVIES WITH METADATA TO THE END OF THIS LIST
 	*/
+	
+	$scope.title = "IMDB + Elizabeth's Top 8 Movies";
+	$scope.owner = "Elizabeth";
+	$scope.github = "https://github.com/eo65/is219oviedo-p3";
+	
 	$scope.movies = [
-    { 
+	{ 
       title:	'The Shawshank Redemption', 
       iscore:	9.3,
       rating:	'R',
@@ -89,7 +95,6 @@ app.controller('HomeController', ['$scope', function($scope) {
       dislikes:	101,
       posterindex: 0
 	}
-	
 	
   ];
 	
