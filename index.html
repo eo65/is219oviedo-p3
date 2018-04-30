@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="IS219Gallery">
+<html>
 <head>
 	<title>IS219 Gallery (Project 3)</title>
 
@@ -20,7 +20,7 @@
 	
 </head>
 
-  <body ng-controller="HomeController">
+  <body ng-app="IS219Gallery" ng-controller="HomeController">
 	  
     <div class="header">
 	    
@@ -37,7 +37,7 @@
         <div class="col-md-6"> 
             <div class="thumbnail">
 
-					<img class="poster" />{{movies[0].posters[0]}}
+					<img class="poster" ng-click="posterClick(0)" ng-src="{{movies[0].posters[0]}}"/>
 					<div class="imageInfo">{{movies[0].posterIndex}}</div>
 					
 					<p class="title">{{movies[0].title}} ({{movies[0].country}})</p> 
@@ -58,8 +58,8 @@
 
     <div class="footer">
       <div class="container">
-		<a id="github" class="btn btn-lg btn-warning" ng-controller="HomeController">
-			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> {{owner}} {{github}}
+		<a id="github" class="btn btn-lg btn-warning" ng-ref="{{github}}">{{owner}} 
+			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> 
   		</a>
       </div>
     </div>
