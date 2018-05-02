@@ -90,12 +90,51 @@ app.controller('HomeController', ['$scope', function($scope) {
       likes:	812,
       dislikes:	101,
       posterindex: 0
+	},
+	{ 
+      title:	'Titanic', 
+      iscore:	7.8,
+      rating:	'PG-13',
+      runtime:	194,
+      released:	new Date('1997', '12', '19'),
+      country:	'USA',
+      posters:	['img/titanicimg1.jpg','img/titanicimg2.jpg','img/titanicimg3.jpg'],
+      imdb:		'https://www.imdb.com/title/tt0120338/?ref_=nv_sr_1',
+      website:	'https://www.facebook.com/TitanicMovie/',
+      likes:	1150,
+      dislikes:	103,
+      posterindex: 0
+	},
+    { 
+      title:	'The Way of the Dragon', 
+      iscore:	7.3,
+      rating:	'R',
+      runtime:	90,
+      released:	new Date('1972', '08', '14'),
+      country:	'China | Italy',
+      posters:	['img/wayofDragon2.jpg','img/wayofDragon1.jpg'],
+      imdb:		'https://www.imdb.com/title/tt0068935/?ref_=nv_sr_1',
+      website:	'https://www.facebook.com/Wataaaah/',
+      likes:	992,
+      dislikes:	85,
+      posterindex: 0
+	},
+    { 
+      title:	'The Mask of Zorro', 
+      iscore:	6.7,
+      rating:	'PG-13',
+      runtime:	136,
+      released:	new Date('1998', '07', '17'),
+      country:	'USA | Germany',
+      posters:	['img/zoro1.jpg','img/zoro2.jpg'],
+      imdb:		'https://www.imdb.com/title/tt0120746/?ref_=nv_sr_1',
+      website:	'https://www.facebook.com/The-Mask-of-Zorro-Full-Movie-1998-1765683480412279/',
+      likes:	340,
+      dislikes:	120,
+      posterindex: 0
 	}
 	
-  ];
-	
-	
-
+  ];	
 	
 	/* ADD VARIABLES FOR STEP 3 HERE */
 	$scope.title = "IMDB + Elizabeth's Top 8 Movies";
@@ -103,19 +142,32 @@ app.controller('HomeController', ['$scope', function($scope) {
 	$scope.github = "https://github.com/eo65/is219oviedo-p3";
 	
 	
-	
-	
-	
-	
-	
 	/* ADD FUNCTIONS FOR STEP 7 HERE */
-		
+	$scope.like = function(index) {
+		$scope.movies[index].likes++;
+	};
 	
+	$scope.dislike = function(index) {
+		if ($scope.movies[index].dislikes != 0) {	
+			$scope.movies[index].dislikes--;
+		}	
+	};
 	
+	$scope.posterClick = function(index) {
+		if ($scope.movies[index].posterindex < $scope.movies[index].posters.length - 1) {
+			$scope.movies[index].posterindex++ ;
+		}
+		else {
+			$scope.movies[index].posterindex = 0;
+		}
+	}
 	
-	
-	
-	
-	
+	$scope.timeText = function(minute) {
+		$scope.num = minute/60;
+		$scope.n = num.toString();
+		$scope.num1 = minute-(60*parseInt(n[0]));
+		$scope.m = num1.toString();
+		return $scope.n[0] + "hr " + $scope.m + "m";
+	}
 	
 }]);
