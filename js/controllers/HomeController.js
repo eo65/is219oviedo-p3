@@ -149,7 +149,7 @@ app.controller('HomeController', ['$scope', function($scope) {
 	
 	$scope.dislike = function(index) {
 		if ($scope.movies[index].dislikes != 0) {	
-			$scope.movies[index].dislikes--;
+			$scope.movies[index].dislikes++;
 		}	
 	};
 	
@@ -160,14 +160,12 @@ app.controller('HomeController', ['$scope', function($scope) {
 		else {
 			$scope.movies[index].posterindex = 0;
 		}
-	}
+	};
 	
-	$scope.timeText = function(minute) {
-		$scope.num = minute/60;
-		$scope.n = num.toString();
-		$scope.num1 = minute-(60*parseInt(n[0]));
-		$scope.m = num1.toString();
-		return $scope.n[0] + "hr " + $scope.m + "m";
-	}
+	$scope.timeText = function(minutes) {
+		$scope.hours = (Math.floor(minutes / 60));  
+		$scope.minutes = (Math.abs(minutes) % 60);  
+		return  $scope.hours +'hrs '+$scope.minutes + 'min';
+	};
 	
 }]);
