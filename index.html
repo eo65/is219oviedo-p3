@@ -33,7 +33,7 @@
     <div class="main">
       
       <div class="container">
-			<div class="thumbnail" class="col-md-6"  ng-repeat="x in movies">
+			<div class="thumbnail"  ng-repeat="x in movies">
 				
 					<img class="poster" ng-click="posterClick($index)" ng-src="{{movies[$index].posters[movies[$index].posterindex]}}"/>
 					<div class="imageInfo">Posters {{movies[$index].posterindex + 1}} of {{movies[$index].posters.length}}</div>
