@@ -30,8 +30,9 @@ body {
     padding: 50px;
     border-radius: 0;
     margin-bottom: 50px;
-    
+	float: left;
 }
+
 .thumbnail img {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -125,7 +126,7 @@ body {
 	background-color: #008700;
 }
 
-.likes:hover{
+.likes:hover {
 	background-color: #9edd87;
 	color: #008700;
 }
@@ -138,7 +139,3 @@ body {
 	background-color: #fdd6d6;
 	color: #F65A5B;
 }
-
-
-
-
