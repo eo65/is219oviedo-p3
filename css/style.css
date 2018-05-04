@@ -94,7 +94,6 @@ body {
 
 /* This shapes your like and dislike buttons */
 .likes{
-
 	background-color: #008700;
     color: #ffffff;
 	cursor: pointer;
@@ -111,7 +110,6 @@ body {
     transition: background 500ms;
 }
 .dislikes {
-
 	background-color: #f65a5b;
     color: #ffffff;
     cursor: pointer;
