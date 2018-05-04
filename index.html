@@ -16,13 +16,14 @@
 	<!-- DO NOT CHANGE ANYTHING ABOVE THIS LINE-->
 
 	<!-- Angular (ADD HERE) -->
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.min.js"></script>
+
 	
 </head>
+	<body div ng-app="IS219Gallery" ng-controller="HomeController">
 
-  <body ng-app="IS219Gallery" ng-controller="HomeController">
-	  
     <div class="header">
+
 	    
       <div class="container">
         <h1 id="app_title">{{title}}</h1>
@@ -33,34 +34,38 @@
     <div class="main">
       
       <div class="container">
-			<div class="thumbnail"  ng-repeat="x in movies">
-				
-					<img class="poster" ng-click="posterClick($index)" ng-src="{{movies[$index].posters[movies[$index].posterindex]}}"/>
-					<div class="imageInfo">Posters {{movies[$index].posterindex + 1}} of {{movies[$index].posters.length}}</div>
-					
-					<p class="title">{{movies[$index].title}} ({{movies[$index].country}})</p> 
-					<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[$index].iscore}} </p>
-					<p class="runtime" >Runtime: {{timeText(movies[$index].runtime)}}</p>
-					<p class="released">Released: {{movies[$index].released}} | Rated: {{movies[$index].rating}}</p>
-					<p class="websites">Websites: <a ng-href="{{movies[$index].imdb}}">IMDB</a> | <a ng-href="{{movies[$index].website}}">Official</a></p>
-					
-		            <div class="social">
-		              <p class="likes" ng-click="like($index)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[$index].likes}}</p>
-		              <p class="dislikes" ng-click="dislike($index)"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[$index].dislikes}}</p>
-		            </div>
-            </div>
-      </div>
-    </div>
 
+			<div ng-repeat="movie in movies" class="col-md-6"> 
+					<div class="thumbnail">
+		
+						<img class="poster" ng-click="posterClick($index)" ng-src = "{{movies[$index].posters[movies[$index].posterindex]}}"> 
+						<div class="imageInfo">Poster:{{movies[$index].posterindex+1}} of  {{movies[$index].posters.length}}</div>
+							
+							<p class="title" >{{movies[$index].title}} ({{movies[$index].country}})</p> 
+							<p class="score"><i class="fa fa-star" aria-hidden="true"></i> {{movies[$index].iscore}} </p>
+							<p class="runtime">Runtime: {{timeText(movies[$index].runtime)}}</p> 
+							<p class="released">Released: {{movies[$index].released | date}} | Rated: {{movies[$index].rating}}</p>
+							<p class="websites">Websites: <a ng-href="{{movies[$index].imdb}}">IMDB</a> | <a ng-href="{{movies[$index].Official}}">Official</a></p>
+							
+							<div class="social">
+							  <p class="likes" ng-click="like($index)"><i class="fa fa-thumbs-up" aria-hidden="true"></i> {{movies[$index].likes}}</p>
+							  <p class="dislikes" ng-click="dislike($index)"><i class="fa fa-thumbs-down" aria-hidden="true"></i> {{movies[$index].dislikes}}</p>
+							</div>
+					</div> 
+				</div>
+
+	
     <div class="footer">
       <div class="container">
-		<a id="github" class="btn btn-lg btn-warning" ng-href="{{github}}">{{owner}} 
+			
+		<a id="github" class="btn btn-lg btn-warning" ng-href="{{github}}">{{owner}}
 			<i class="fa fa-lg fa-github pull-left" aria-hidden="true"></i> 
   		</a>
-      </div>
+			</div>
+			
     </div>
 
-  
+
   	<!-- Modules -->
 	<script type="text/javascript" src="js/app.js"></script>
 	 
@@ -68,6 +73,7 @@
 	<script type="text/javascript" src="js/controllers/HomeController.js"></script>
 	 
 	<!-- Services -->
-  
-</body>
+	
+
+	</body>
 </html>

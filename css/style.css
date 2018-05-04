@@ -30,9 +30,8 @@ body {
     padding: 50px;
     border-radius: 0;
     margin-bottom: 50px;
-	float: left;
+    
 }
-
 .thumbnail img {
     margin-top: 10px;
     margin-bottom: 30px;
@@ -66,9 +65,8 @@ body {
 
 /* This shapes your IMDB score area */
 .score {
-    background-color: #39D1B4;	
-    border-radius: 100px;
-	color: #fff;
+    background-color: #39D1B4;
+    color: #fff;
     font-size: 18px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-weight: 200;
@@ -77,8 +75,10 @@ body {
     text-align: center;
     width: 80px;
     position: absolute;
+    border-radius: 50%;
     top: 50px;
     right: 25px;
+    
 }
 
 /* This contains your like and dislike buttons */
@@ -93,8 +93,27 @@ body {
 }
 
 /* This shapes your like and dislike buttons */
-.likes,
+.likes{
+
+	background-color: #008700;
+    color: #ffffff;
+	cursor: pointer;
+    display: inline-block;
+    font-size: 15px;
+    line-height: 40px;
+    min-width: 70px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 -30px 0 40px;
+    text-align: center;
+    font-weight: 200;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background 500ms;
+}
 .dislikes {
+
+	background-color: #f65a5b;
+    color: #ffffff;
     cursor: pointer;
     display: inline-block;
     font-size: 15px;
@@ -107,7 +126,6 @@ body {
     font-weight: 200;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     transition: background 500ms;
-	color: #ffffff;
 }
 
 /* This makes sure your Github Button is centered */
@@ -122,20 +140,16 @@ body {
 }
 
 /* ADD YOUR LIKE AND DISLIKE HOVER/MOUSEOVER CSS CODE HERE */
-.likes {
-	background-color: #008700;
-}
 
 .likes:hover {
+
 	background-color: #9edd87;
-	color: #008700;
-}
-
-.dislikes {
-	background-color: #f65a5b;
-}
-
+    color: #008700;
+    /*transition: all  ease;*/
+} 
 .dislikes:hover {
+	
 	background-color: #fdd6d6;
-	color: #F65A5B;
+    color: #F65A5B;
+    transition: all  ease;
 }
