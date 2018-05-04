@@ -30,7 +30,7 @@ body {
     padding: 50px;
     border-radius: 0;
     margin-bottom: 50px;
-    
+    float: left;
 }
 .thumbnail img {
     margin-top: 10px;
